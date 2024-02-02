@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeadsetController</title>
+    <script type="module" src="/main.js" defer></script>
+    <style>
+      .logo.vanilla:hover {
+        filter: drop-shadow(0 0 2em #ffe21c);
+      }
+    </style>
+  </head>
+
+  <body>      
+    <div class="container">
+      <p id="headset-presence">Checking for headset presence...</p>
+    </div>
+    
+    <form id="config-form" style="display: block" action="#">
+      <p class="range-field">    
+        <label for="sidetone">Sidetone</label>
+        <input type="range" min="0" max="128" value="0" class="slider" id="sidetone-slider" oninput="this.nextElementSibling.value = this.value">
+        <output>0</output>
+      </p>
+      <label for="lights">Lights</label><input type="checkbox" id="lights" name="lights" value="Lights">
+
+
+      <p class="range-field">    
+        <label for="preset">Preset</label>
+        <input type="range" min="0" max="3" value="0" class="slider" id="preset-slider" oninput="this.nextElementSibling.value = this.value">
+        <output>0</output>
+      </p>
+    </form>
+  </body>
+</html>
