@@ -31,7 +31,7 @@
       ]
     },
     "security": {
-      "csp": null
+      "csp": "Content-Security-Policy: default-src 'self'"
     },  
     "systemTray": {
       "iconPath": "icons/icon.png",
@@ -40,10 +40,10 @@
     "windows": [
       {
         "fullscreen": false,
-        "resizable": true,
+        "resizable": false,
         "title": "HeadsetController",
-        "width": 800,
-        "height": 600
+        "width": 300,
+        "height": 250
       }
     ]
   }

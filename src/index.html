@@ -17,22 +17,37 @@
   <body>      
     <div class="container">
       <p id="headset-presence">Checking for headset presence...</p>
-    </div>
     
-    <form id="config-form" style="display: block" action="#">
-      <p class="range-field">    
-        <label for="sidetone">Sidetone</label>
-        <input type="range" min="0" max="128" value="0" class="slider" id="sidetone-slider" oninput="this.nextElementSibling.value = this.value">
-        <output>0</output>
-      </p>
-      <label for="lights">Lights</label><input type="checkbox" id="lights" name="lights" value="Lights">
-
-
-      <p class="range-field">    
-        <label for="preset">Preset</label>
-        <input type="range" min="0" max="3" value="0" class="slider" id="preset-slider" oninput="this.nextElementSibling.value = this.value">
-        <output>0</output>
-      </p>
-    </form>
+      <form id="config-form" style="display: none" action="#">
+        <table>
+          <tr>
+            <td>
+              <label for="sidetone">Sidetone</label>
+            </td>
+            <td class="range-field">
+              <input type="range" min="0" max="128" value="0" class="slider" id="sidetone" oninput="this.nextElementSibling.value = this.value">
+              <output></output>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lights">Lights</label>
+            </td>
+            <td>
+              <input type="checkbox" id="lights" name="lights" value="1">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="preset">Preset</label>
+            </td>
+            <td class="range-field">
+              <input type="range" min="0" max="3" value="0" class="slider" id="preset" oninput="this.nextElementSibling.value = this.value">
+              <output></output>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
   </body>
 </html>
