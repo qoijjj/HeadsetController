@@ -1,6 +1,7 @@
 use std::process::Command;
 use std::fs;
 use serde::{Deserialize, Serialize};
+use dirs;
 
 #[derive(Deserialize, Serialize, Default)]
 pub struct HeadsetConfig {
@@ -8,8 +9,10 @@ pub struct HeadsetConfig {
     pub lights: Option<u32>,
 }
 
-fn get_config_file_name() -> String {
-     return "headset_config.json".to_string();
+fn get_config_file_name_and_create_dir() -> String {
+     let config_sub_dir_name = "headset-controller";
+     fs::create_dir_all(dirs::config_dir().unwrap().join(config_sub_dir_name)).unwrap();
+     return dirs::config_dir().unwrap().join(config_sub_dir_name).join("headset_config.json").display().to_string();
 }
 
 pub fn is_headset_found() -> bool {
@@ -27,10 +30,10 @@ pub fn write_config(headset_config: HeadsetConfig) {
           .unwrap_or_else(|err| panic!("Failed to serialize config: {}", err));
   
      dbg!(headset_config_str_json.clone());
-     fs::write(get_config_file_name(), headset_config_str_json).expect("Failed to write config file");
+     fs::write(get_config_file_name_and_create_dir(), headset_config_str_json).expect("Failed to write config file");
 }
 
 pub fn read_config() -> Option<HeadsetConfig> {
-     let headset_config_str_json = fs::read_to_string(get_config_file_name()).ok()?;
+     let headset_config_str_json = fs::read_to_string(get_config_file_name_and_create_dir()).ok()?;
      return serde_json::from_str::<HeadsetConfig>(&headset_config_str_json).ok();
 }
