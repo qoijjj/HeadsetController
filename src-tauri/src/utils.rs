@@ -29,7 +29,6 @@ pub fn write_config(headset_config: HeadsetConfig) {
      let headset_config_str_json = serde_json::to_string::<HeadsetConfig>(&headset_config)
           .unwrap_or_else(|err| panic!("Failed to serialize config: {}", err));
   
-     dbg!(headset_config_str_json.clone());
      fs::write(get_config_file_name_and_create_dir(), headset_config_str_json).expect("Failed to write config file");
 }
 

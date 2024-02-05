@@ -34,20 +34,9 @@ pub fn start() {
 }
 
 fn execute_headsetcontrol_command(arg: String, value: String) {
-    eprintln!(
-        "Executing headsetcontrol {} {}'",
-        arg.clone(), value.clone()
-    );
     let command = Command::new("headsetcontrol")
         .arg(arg.clone())
         .arg(value.clone())
         .output()
         .expect("Failed to execute command");
-
-    if !command.status.success() {
-        eprintln!(
-            "Failed to execute 'headsetcontrol {} {}'",
-            arg.clone(), value.clone()
-        );
-    }
 }
