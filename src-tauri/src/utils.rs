@@ -6,7 +6,6 @@ use serde::{Deserialize, Serialize};
 pub struct HeadsetConfig {
     pub sidetone: Option<u32>,
     pub lights: Option<u32>,
-    pub preset: Option<u32>,
 }
 
 fn get_config_file_name() -> String {

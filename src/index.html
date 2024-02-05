@@ -7,11 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HeadsetController</title>
     <script type="module" src="/main.js" defer></script>
-    <style>
-      .logo.vanilla:hover {
-        filter: drop-shadow(0 0 2em #ffe21c);
-      }
-    </style>
   </head>
 
   <body>      
@@ -34,16 +29,7 @@
               <label for="lights">Lights</label>
             </td>
             <td>
-              <input type="checkbox" id="lights" name="lights" value="1">
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <label for="preset">Preset</label>
-            </td>
-            <td class="range-field">
-              <input type="range" min="0" max="3" value="0" class="slider" id="preset" oninput="this.nextElementSibling.value = this.value">
-              <output></output>
+              <input type="checkbox" id="lights" name="lights">
             </td>
           </tr>
         </table>

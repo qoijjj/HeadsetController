@@ -15,10 +15,6 @@ pub fn start() {
                     if let Some(light) = config.lights {
                         execute_headsetcontrol_command("-l", &light.to_string());
                     }
-
-                    if let Some(preset) = config.preset {
-                        execute_headsetcontrol_command("-p", &preset.to_string());
-                    }
                 }
             }
 
@@ -29,6 +25,10 @@ pub fn start() {
 }
 
 fn execute_headsetcontrol_command(arg: &str, value: &str) {
+    eprintln!(
+        "Executing 'headsetcontrol {} {}'",
+        arg, value
+    );
     let command = Command::new("headsetcontrol")
         .arg(arg)
         .arg(value)
