@@ -1,7 +1,7 @@
 [package]
 name = "headset-controller"
 version = "0.0.0"
-description = "HeadsetController"
+description = "Headset Controller"
 authors = ["qoijjj"]
 license = ""
 repository = ""
