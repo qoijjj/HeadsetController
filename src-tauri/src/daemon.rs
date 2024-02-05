@@ -39,4 +39,11 @@ fn execute_headsetcontrol_command(arg: String, value: String) {
         .arg(value.clone())
         .output()
         .expect("Failed to execute command");
+
+    if !command.status.success() {
+        eprintln!(
+            "Failed to execute 'headsetcontrol {} {}'",
+            arg.clone(), value.clone()
+        );
+    }
 }
