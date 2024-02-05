@@ -11,7 +11,7 @@ async function isHeadsetFound(configFormEl) {
   if (isHeadsetFound) {
     configFormEl.style.display = "block"
   } else { 
-    headsetPresenceEl.style.display = "none"
+    configFormEl.style.display = "none"
   }
 }
 
